@@ -20,6 +20,9 @@ Implementation of TDHDF without any parallel programming tools
 ### MPI
 Message Passing Interface exclusive implementation of the TDHF
 
+## Test Suite
+Environment for data collection; that is: execution times for the different implementations. It will use POSIX fork() and execlp() to run each implementation and gather execution times.
+
 ## Compile and Run
 The following instructions are relevant for the following projects:
 * `hybrid`
