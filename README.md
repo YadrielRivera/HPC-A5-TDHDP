@@ -23,6 +23,9 @@ Message Passing Interface exclusive implementation of the TDHF
 ## Test Suite
 Environment for data collection; that is: execution times for the different implementations. It will use POSIX fork() and execlp() to run each implementation and gather execution times.
 
+## grid_gen.c
+Generates an N by N grid with the edges of the grid set to 100.00
+
 **Note that for the test suite to execute, all the other projects must be compiled, built, and with an executable file available**
 
 ## Compile and Run (Non-MPI)
