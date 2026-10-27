@@ -70,9 +70,9 @@ CMakeUserPresets.json
 
 # Executables
 test
-hybrid
-mpi
-sequential
+hybrid_e
+mpi_e
+sequential_e
 
 # VSCODE
 .vscode

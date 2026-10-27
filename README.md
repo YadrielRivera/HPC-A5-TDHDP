@@ -47,7 +47,7 @@ make
 ./<executable name>
 ```
 Executable names include:
-* `sequential`
+* `sequential_e`
 * `test`
 
 ## Compile & Run (MPI)
