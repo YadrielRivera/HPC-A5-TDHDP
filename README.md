@@ -33,7 +33,7 @@ The following instructions are relevant for the following projects (non-mpi):
 * `sequential`
 * `test_suite`
 
-### Building
+### Building (Linux)
 From directory H5
 
 ```bash
@@ -43,12 +43,18 @@ cd build
 cmake -S .. -B .
 ```
 
-### Compiling & Running
+### Compiling & Running (Linux)
 From the build directory of the desired implementation:
 ```bash
 make
 ./<executable name>
 ```
+### Compiling & Running (Windows)
+From the build directory of the desired implementation:
+```bash
+gcc ../src/main.c -o <executable-name>
+```
+
 Executable names include:
 * `sequential_e`
 * `test`
