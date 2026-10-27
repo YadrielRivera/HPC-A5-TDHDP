@@ -23,10 +23,10 @@ Message Passing Interface exclusive implementation of the TDHF
 ## Test Suite
 Environment for data collection; that is: execution times for the different implementations. It will use POSIX fork() and execlp() to run each implementation and gather execution times.
 
-## Compile and Run
-The following instructions are relevant for the following projects:
-* `hybrid`
-* `mpi`
+**Note that for the test suite to execute, all the other projects must be compiled, built, and with an executable file available**
+
+## Compile and Run (Non-MPI)
+The following instructions are relevant for the following projects (non-mpi):
 * `sequential`
 * `test_suite`
 
@@ -34,7 +34,9 @@ The following instructions are relevant for the following projects:
 From directory H5
 
 ```bash
-cd <desired implementation>/build
+cd <desired implementation>
+mkdir build
+cd build
 cmake -S .. -B .
 ```
 
@@ -45,7 +47,13 @@ make
 ./<executable name>
 ```
 Executable names include:
-* `hybrid`
-* `mpi`
 * `sequential`
 * `test`
+
+## Compile & Run (MPI)
+From the desired implementation directory (hybrid or mpi):
+```bash
+cd build
+chmod +x build-run.sh
+./build-run.sh
+```
