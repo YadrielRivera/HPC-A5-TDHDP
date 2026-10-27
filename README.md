@@ -7,7 +7,7 @@ This assignment consists of the implementation of a sequential, MPI-only, and MP
 * CMake 3.10+
 * MPI
 * OpenMP
-* (optional) A Linux-based OS or WSL if running the `test suite`, it uses POSIX syscalls
+* (optional although preferable) A Linux-based OS or WSL if running the `test suite`, it uses POSIX syscalls
 
 ## General Information
 
