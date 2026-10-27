@@ -1,0 +1,48 @@
+# A5: Hybrid Parallel Programming
+
+## Background
+This assignment consists of the implementation of a sequential, MPI-only, and MPI + OpenMP of the Two Dimensional Heat Diffusion Problem (TDHDP)
+
+## Requirements
+* CMake 3.10+
+* MPI
+* OpenMP
+* (optional) A Linux-based OS or WSL if running the `test suite`, it uses POSIX syscalls
+
+## General Information
+
+### Hybrid
+This is the OpenMP + MPI implementation of the TDHDF
+
+### Sequential
+Implementation of TDHDF without any parallel programming tools
+
+### MPI
+Message Passing Interface exclusive implementation of the TDHF
+
+## Compile and Run
+The following instructions are relevant for the following projects:
+* `hybrid`
+* `mpi`
+* `sequential`
+* `test_suite`
+
+### Building
+From directory H5
+
+```bash
+cd <desired implementation>/build
+cmake -S .. -B .
+```
+
+### Compiling & Running
+From the build directory of the desired implementation:
+```bash
+make
+./<executable name>
+```
+Executable names include:
+* `hybrid`
+* `mpi`
+* `sequential`
+* `test`
