@@ -165,7 +165,7 @@ int main(int argc, char* argv[]) {
   MPI_Barrier(MPI_COMM_WORLD);  // wait for the slowest rank
   double time_e = MPI_Wtime();
 
-  PrintDistributedGrid(old_partition, workload, N, curr_rank, world_size);
+  // PrintDistributedGrid(old_partition, workload, N, curr_rank, world_size);
   if (curr_rank == 0) {
     printf("This is the MPI + OpenMP implementation!\n");
     printf(
