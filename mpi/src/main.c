@@ -164,7 +164,8 @@ int main(int argc, char* argv[]) {
   if (curr_rank == 0) {
     printf("This is the MPI implementation!\n");
     printf(
-        "Took %.12f seconds for %d steps on %dx%d grid across %d processes\n",
+        "[MPI]: Took %.12f seconds for %d steps on %dx%d grid across %d "
+        "processes\n\n",
         (time_e - time_s), steps, N, N, thread_count);
   }
 

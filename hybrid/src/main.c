@@ -107,6 +107,10 @@ int main(int argc, char* argv[]) {
 
   if (argc > 1) {
     N = atoi(argv[1]);
+
+    if (argc == 3) {
+      omp_set_num_threads(atoi(argv[2]));
+    }
   }
 
   if (N % world_size != 0) {
@@ -169,8 +173,9 @@ int main(int argc, char* argv[]) {
   if (curr_rank == 0) {
     printf("This is the MPI + OpenMP implementation!\n");
     printf(
-        "Took %.12f seconds for %d steps on %dx%d grid across %d processes and "
-        "%d OpenMP threads\n",
+        "[HYBRID]: Took %.12f seconds for %d steps on %dx%d grid across %d "
+        "processes and "
+        "%d OpenMP threads\n\n",
         (time_e - time_s), steps, N, N, world_size, omp_get_max_threads());
   }
 

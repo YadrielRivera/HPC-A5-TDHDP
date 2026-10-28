@@ -1,3 +1,4 @@
+# /bin/bash
 # Compile
 mpicc ../src/main.c -fopenmp -o hybrid_e
 
