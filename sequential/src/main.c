@@ -60,7 +60,7 @@ void Simulation(double** old_grid, double** new_grid, int N, int total_steps) {
 int main(int argc, char* argv[]) {
   printf("This is the sequential implementation!\n");
 
-  int N = 5;  // default value for grid size
+  int N = 8;  // default value for grid size
 
   // change value to custom argument
   if (argc > 1) {
