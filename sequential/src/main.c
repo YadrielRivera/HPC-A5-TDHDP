@@ -81,7 +81,7 @@ int main(int argc, char* argv[]) {
       (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
 
   printf(
-      "[SEQUENTIAL]: Took %.6f seconds to simulate %d steps for %dx%d grid.\n",
+      "[SEQUENTIAL]: Took %.12f seconds to simulate %d steps for %dx%d grid.\n",
       elapsed, time_steps, N, N);
 
   // free the grid

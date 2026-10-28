@@ -168,8 +168,10 @@ int main(int argc, char* argv[]) {
   PrintDistributedGrid(old_partition, workload, N, curr_rank, world_size);
   if (curr_rank == 0) {
     printf("This is the MPI + OpenMP implementation!\n");
-    printf("Took %.6f seconds for %d steps on %dx%d grid across %d processes\n",
-           (time_e - time_s), steps, N, N, world_size);
+    printf(
+        "Took %.12f seconds for %d steps on %dx%d grid across %d processes and "
+        "%d OpenMP threads\n",
+        (time_e - time_s), steps, N, N, world_size, omp_get_max_threads());
   }
 
   free(old_flat);
