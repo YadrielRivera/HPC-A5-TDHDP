@@ -1,4 +1,4 @@
 # Compile
 mpicc ../src/main.c -o mpi_e
 # Run
-mpirun ./mpi_e
+mpirun -np 2 ./mpi_e 10
