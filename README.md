@@ -12,7 +12,7 @@ This assignment consists of the implementation of a sequential, MPI-only, and MP
 ## General Information
 
 ### Sequential
-Implementation of TDHDF without any parallel programming tools.
+Implementation of TDHDP without any parallel programming tools.
 
 ### MPI
 Message Passing Interface implementation of the TDHDP.
@@ -20,7 +20,7 @@ Message Passing Interface implementation of the TDHDP.
 **Requirement**: the grid size (N) must be divisible by the number of MPI processes (P). This limitation is for simplicity at the moment of partitioning contiguous rows.
 
 ### Hybrid
-OpenMP + MPI implementation of the TDHDF. The code is very similar as the MPI implementation, it only adds omp parallel for threading directives in the local partition modification and new-grid/old-grid updating.
+OpenMP + MPI implementation of the TDHDP. The code is very similar as the MPI implementation, it only adds omp parallel for threading directives in the local partition modification and new-grid/old-grid updating.
 
 ## Test Suite
 Environment for data collection; that is: execution times for the different implementations. It will use POSIX fork() and execlp() to run each implementation and aggregate execution times.
