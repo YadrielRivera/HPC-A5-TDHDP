@@ -15,7 +15,7 @@ This assignment consists of the implementation of a sequential, MPI-only, and MP
 Implementation of TDHDF without any parallel programming tools.
 
 ### MPI
-Message Passing Interface implementation of the TDHDF.
+Message Passing Interface implementation of the TDHDP.
 
 **Requirement**: the grid size (N) must be divisible by the number of MPI processes (P). This limitation is for simplicity at the moment of partitioning contiguous rows.
 
