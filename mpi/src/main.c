@@ -160,13 +160,19 @@ int main(int argc, char* argv[]) {
   MPI_Barrier(MPI_COMM_WORLD);  // wait for the slowest rank
   double time_e = MPI_Wtime();
 
+  double local_elapsed_time = time_e - time_s;
+  double max_elapsed_time = 0.0f;
+
+  MPI_Reduce(&local_elapsed_time, &max_elapsed_time, 1, MPI_DOUBLE, MPI_MAX, 0,
+             MPI_COMM_WORLD);
+
   // PrintDistributedGrid(old_partition, workload, N, curr_rank, thread_count);
   if (curr_rank == 0) {
     printf("This is the MPI implementation!\n");
     printf(
         "[MPI]: Took %.12f seconds for %d steps on %dx%d grid across %d "
-        "processes\n\n",
-        (time_e - time_s), steps, N, N, thread_count);
+        "processes with the longest MPI rank time being %.12f\n\n",
+        (time_e - time_s), steps, N, N, thread_count, max_elapsed_time);
   }
 
   free(old_flat);

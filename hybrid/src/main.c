@@ -169,14 +169,20 @@ int main(int argc, char* argv[]) {
   MPI_Barrier(MPI_COMM_WORLD);  // wait for the slowest rank
   double time_e = MPI_Wtime();
 
+  double local_elapsed_time = time_e - time_s;
+  double max_elapsed_time = 0.0f;
+
+  MPI_Reduce(&local_elapsed_time, &max_elapsed_time, 1, MPI_DOUBLE, MPI_MAX, 0,
+             MPI_COMM_WORLD);
+
   // PrintDistributedGrid(old_partition, workload, N, curr_rank, world_size);
   if (curr_rank == 0) {
     printf("This is the MPI + OpenMP implementation!\n");
     printf(
         "[HYBRID]: Took %.12f seconds for %d steps on %dx%d grid across %d "
-        "processes and "
+        "processes with the longest MPI rank time being %.12f and "
         "%d OpenMP threads\n\n",
-        (time_e - time_s), steps, N, N, world_size, omp_get_max_threads());
+        (time_e - time_s), steps, N, N, world_size, max_elapsed_time, omp_get_max_threads());
   }
 
   free(old_flat);
